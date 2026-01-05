@@ -2,6 +2,11 @@
 #include "DragonSlayer.h"
 
 //Dragon::Dragon
+Dragon::Dragon( const std::string& name_, int hitPoints, int armor, int attackDamage )
+    : Character{ hitPoints, armor, attackDamage }
+    , name{ name_ }
+{
+}
 
 void Dragon::attack(Character &other)
 {
@@ -18,5 +23,16 @@ void Dragon::attack(Character &other)
 }
 
 //Dragon::getName
+const std::string& Dragon::getName()
+{
+    return name;
+}
 
 //Dragon::getStats
+std::string Dragon::getStats()
+{
+	return getName() + "'s stats: \n" +
+        "    hitPoints: " + std::to_string( getHP() ) + "\n" +
+        "    armor: " + std::to_string( getArmorLevel() ) + "\n" +
+        "    attack damage: " + std::to_string( getAttackDamage() ) + "\n";
+}
