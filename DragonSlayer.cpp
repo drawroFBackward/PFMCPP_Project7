@@ -1,5 +1,6 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
+#include "Utility.h"
 #include <cassert>
 
 //DragonSlayer::DragonSlayer
@@ -39,8 +40,5 @@ void DragonSlayer::attack(Character& other)
 //DragonSlayer::getStats
 std::string DragonSlayer::getStats()
 {
-    return getName() + "'s stats: \n" +
-        "    hitPoints: " + std::to_string( getHP() ) + "\n" +
-        "    armor: " + std::to_string( getArmorLevel() ) + "\n" +
-        "    attack damage: " + std::to_string( getAttackDamage() ) + "\n";
+    return getCharacterStats(this);
 }

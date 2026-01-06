@@ -1,4 +1,5 @@
 #include "Dwarf.h"
+#include "Utility.h"
 
 //Dwarf::Dwarf
 Dwarf::Dwarf( const std::string& name_, int hitPoints, int armor, int attackDamage )
@@ -16,8 +17,5 @@ const std::string& Dwarf::getName()
 //Dwarf::getStats
 std::string Dwarf::getStats()
 {
-	return getName() + "'s stats: \n" +
-		"    hitPoints: " + std::to_string( getHP() ) + "\n" +
-		"    armor: " + std::to_string( getArmorLevel() ) + "\n" +
-		"    attack damage: " + std::to_string( getAttackDamage() ) + "\n";
+	return getCharacterStats(this);
 }
