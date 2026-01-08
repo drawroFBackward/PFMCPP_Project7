@@ -6,6 +6,8 @@ Dwarf::Dwarf( const std::string& name_, int hitPoints, int armor, int attackDama
 	: Character{ hitPoints, armor, attackDamage }
 	, name{ name_ }
 {
+	helpfulItems = makeHelpfulItems(rand() % 7 + 1);
+	defensiveItems = makeDefensiveItems(rand() % 7 + 1);
 }
 
 //Dwarf::getName

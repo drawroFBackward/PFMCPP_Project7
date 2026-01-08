@@ -8,6 +8,9 @@ struct DragonSlayer : Character
     void attack(Character& other) override;
     const std::string& getName() override;
     std::string getStats() override;
+	const std::vector<std::unique_ptr<Item>>& getAttackItems() const { return attackItems; }
+protected:
+	std::vector<std::unique_ptr<Item>> attackItems;
 private:
     const std::string name;
 };

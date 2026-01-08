@@ -6,6 +6,8 @@ Paladin::Paladin( const std::string& name_, int hitPoints, int armor, int attack
 	: Character{ hitPoints, armor, attackDamage }
 	, name{ name_ }
 {
+	helpfulItems = makeHelpfulItems(rand() % 7 + 1);
+	defensiveItems = makeDefensiveItems(rand() % 7 + 1);
 }
 
 // Paladin::getName

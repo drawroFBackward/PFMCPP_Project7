@@ -91,13 +91,15 @@ void Character::attackInternal(Character& other)
 {
     if( other.hitPoints <= 0 )
     {
-		*initialArmorLevel *= 1.1;
-		*initialHitPoints *= 1.1;
-		*initialAttackDamage *= 1.1;
 		if (armor < *initialArmorLevel) armor = *initialArmorLevel;
 		if (hitPoints < *initialHitPoints) hitPoints = *initialHitPoints;
 		if (attackDamage < *initialAttackDamage) attackDamage = *initialAttackDamage;
-		//doing it this way so that temporary buffs from items don't get permanently applied.
+		armor *= 1.1;
+		hitPoints *= 1.1;
+		attackDamage *= 1.1;
+		*initialArmorLevel = armor;
+		*initialHitPoints = hitPoints;
+		*initialAttackDamage = attackDamage;
         /*
         When you defeat another Character: 
             a) your stats are restored to their initial value if they are lower than it.
