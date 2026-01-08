@@ -25,7 +25,7 @@ void DragonSlayer::attack(Character& other)
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
-        if (dragon->getHP() <= 0)
+        if (dragon->getHP() >= 0)
         {
             for (auto& item : attackItems)
             {
