@@ -107,6 +107,11 @@ int main()
     std::vector<Character*> characters { &dwarf, &paladin, &dragon, &dragonSlayer };
     for( auto* character : characters )
         character->printStats();
+
+    // The following lines pause the console until a key is pressed
+    std::cout << "Press Enter to continue..." << std::endl;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discards any leftover input
+    std::cin.get(); // Waits for user input (Enter key)
     
     return 0;
 }
